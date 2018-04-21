@@ -17,7 +17,7 @@ import struct
 
 
 def socket_service():
-    servername = '172.18.35.105'
+    servername = '127.0.0.1'
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -46,7 +46,7 @@ def deal_data(conn, addr):
         if buf:
             filename, filesize = struct.unpack('128sl', buf)
             fn = filename.decode().strip('\00')
-            new_filename = os.path.join('./', 'new_' + fn)
+            new_filename = os.path.join('./', 'new_' + fn)  
             print('file new name is {0}, filesize if {1}'.format(new_filename, filesize))
 
             recvd_size = 0  # 定义已接收文件的大小

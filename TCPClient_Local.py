@@ -7,7 +7,7 @@ import struct
 
 
 def socket_client():
-    servername = '172.18.35.105'
+    servername = '127.0.0.1'
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((servername, 6666))
